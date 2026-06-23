@@ -17,13 +17,21 @@
       <img src="assets/logo.svg" alt="Krzysztof Miotk" class="brand-logo" width="280" height="42" />
     </a>
     <nav class="nav-links" aria-label="Główna nawigacja">
-      <a href="uslugi.html" aria-current="page">Usługi</a>
-      <a href="insights.html">Insights</a>
-      <a href="o-mnie.html">O mnie</a>
+      <div class="nav-item">
+        <a href="uslugi.html" class="nav-top" aria-haspopup="true">Usługi <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="submenu">
+        <a href="badania-ux.html">Badania UX</a>
+        <a href="zewnetrzny-dyrektor-ux.html">Zewnętrzny Dyrektor UX</a>
+        <a href="segmentacja-klientow.html" aria-current="page">Segmentacja klientów</a>
+        <a href="audyt-ux.html">Audyt UX</a>
+        <a href="konsultacje-i-mentoring.html">Konsultacje i mentoring</a>
+        <a href="wystapienia-i-szkolenia.html">Wystąpienia i szkolenia</a>
+        </div>
+      </div>
       <a href="kontakt.html">Kontakt</a>
     </nav>
     <div class="nav-cta">
-      <a href="kontakt.html" class="btn btn--primary nav-desk">Umów konsultację</a>
+      <a href="kontakt.html" class="btn btn--primary nav-desk">Umów rozmowę</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -33,75 +41,105 @@
 <section class="page-hero">
   <div class="wrap">
     <p class="breadcrumbs"><a href="index.html">Start</a><span>/</span><a href="uslugi.html">Usługi</a><span>/</span>Segmentacja klientów</p>
-    <p class="eyebrow">Strategia</p>
-    <h1 style="max-width:16ch; margin-top:.6rem">Segmentacja klientów</h1>
+    <h1 style="max-width:18ch; margin-top:.4rem">Segmentacja klientów</h1>
     <p class="lead">Zrozum, którzy klienci przynoszą największy zysk i jak o nich zadbać.</p>
     <div class="hero-cta" style="margin-top:1.6rem">
-      <a href="kontakt.html" class="btn btn--primary btn--lg">Umów konsultację <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="kontakt.html" class="btn btn--primary btn--lg">Wyceń usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="uslugi.html" class="btn btn--ghost btn--lg">Wszystkie usługi</a>
     </div>
   </div>
 </section>
-
 <section class="section--tight">
-  <div class="wrap split">
-    <div class="prose reveal">
-      <h2>Dla kogo</h2>
-      <p>Dla zespołów, które chcą przestać traktować wszystkich klientów tak samo i skierować zasoby tam, gdzie zwracają się najszybciej.</p>
-
-      <h2>Co dostajesz</h2>
-      <ul class="checklist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Segmentacja oparta na danych behawioralnych i wartości klienta.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Profile i persony zakorzenione w realnych zachowaniach, nie w domysłach.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Wskazanie segmentów o najwyższym potencjale LTV.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Rekomendacje, jak komunikować się i projektować dla każdego segmentu.</li>
-      </ul>
-
-      <h2>Jak przebiega współpraca</h2>
-      <div class="steps" style="margin-top:1.2rem">
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Dane</h4>
-          <p class="muted" style="font-size:.97rem">Łączymy analitykę, transakcje i wiedzę o klientach.</p>
-        </div>
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Analiza</h4>
-          <p class="muted" style="font-size:.97rem">Wyodrębniam segmenty i opisuję ich potrzeby oraz wartość.</p>
-        </div>
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Priorytety</h4>
-          <p class="muted" style="font-size:.97rem">Pokazuję, które segmenty rozwijać, a które utrzymywać.</p>
-        </div>
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Aktywacja</h4>
-          <p class="muted" style="font-size:.97rem">Przekładam segmenty na konkretne działania produktu i marketingu.</p>
-        </div>
-      </div>
-    </div>
-
-    <aside class="reveal">
-      <div class="sidecard">
-        <span class="pill">Strategia</span>
-        <h4 style="margin-top:1rem">Segmentacja klientów</h4>
-        <div class="price">Wycena indywidualna <small>· zależnie od dostępności danych</small></div>
-        <p class="muted" style="font-size:.95rem; margin:.6rem 0 1.2rem">Najlepiej zacznijmy od krótkiej rozmowy — dopasuję zakres do Twojej sytuacji i celu biznesowego.</p>
-        <a href="kontakt.html" class="btn btn--primary btn--block">Porozmawiajmy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="mailto:krzysiek@quale.agency" class="btn btn--ghost btn--block" style="margin-top:.6rem">krzysiek@quale.agency</a>
-      </div>
-    </aside>
+  <div class="wrap maxw-prose reveal">
+    <h2>Czym jest segmentacja klientów i czym wyróżniają się efekty mojej pracy?</h2>
+    <p>Segmentacja klientów pozwala na <strong>dobre zrozumienie grupy docelowej i wypracowaniu dla niej działań produktowych i marketingowych.</strong></p><p>Przy odpowiednim wdrożeniu pozwala <strong>śledzić klientów i projektować ich przejścia na bardziej rentowne archetypy (persony).</strong></p><p>Przy pracy ze mną:</p><ol class="prose-ol"><li>Wypracujemy (wspólnie) <strong>wskaźniki zachowań ludzi w Twoim produkcie.</strong> Na bazie tego podzielimy ludzi tak, aby firma wiedziała <strong>jak komunikować się do poszczególnych segmentów i jak budować produkt(y) dla nich.</strong></li><li>Stworzę od zera <strong>szablon segmentu dostosowany do kontekstu Twojej firmy, który uzupełnimy o dane, które zbiorę</strong>. Zero „gotowych wzorców”, które po prostu nie sprawdzają się w biznesie.</li><li>Odkryję bolączki i potrzeby klientów, aby firma wiedziała <strong>jakie wartości przedstawiać klientom</strong> (te wartości też możemy wspólnie wypracować).</li><li>Przeprowadzę <strong>warsztaty</strong>, które pozwolą Twojej firmie <strong>śledzić za pomocą analityki swoich użytkowników tak, aby móc wpływać na ich zachowania</strong> (ponowne zakupy, przejście na segment bardziej rentowny).</li></ol>
   </div>
 </section>
-
-<section class="section section--tight">
+<section class="section--tight">
+  <div class="wrap reveal">
+    <h2>Jak wygląda proces?</h2>
+    <div class="steps grid grid-2" style="margin-top:1.4rem">
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Badania interesariuszy</h4>
+        <p class="muted" style="font-size:.97rem">Zrozumiem czego potrzebują Twoi pracownicy, aby rozwijać Twój produkt. Na bazie tego zaprojektuję badania klientów.</p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Badania jakościowe</h4>
+        <p class="muted" style="font-size:.97rem">Podczas wywiadów zrozumiem potrzeby i bolączki Twoich klientów. Wypracuję główny podział segmentów.</p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Badania ilościowe</h4>
+        <p class="muted" style="font-size:.97rem">Ten krok ma na celu poznać skalę bolączek, motywacji i wyróżnić znaczące segmenty Twoich klientów.</p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Warsztaty wdrożeniowe</h4>
+        <p class="muted" style="font-size:.97rem">Wykorzystamy zasoby Twojej firmy i wypracujemy plan działań na wykorzystanie segmentów, aby zasilić biznes.</p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>(Opcjonalnie) Wsparcie wdrożeniowe</h4>
+        <p class="muted" style="font-size:.97rem">Jeżeli Twój zespół będzie potrzebował dalszego wsparcia merytorycznego lub zasobowego – pomogę.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section--tight">
   <div class="wrap">
-    <div class="cta-band reveal">
-      <p class="eyebrow" style="justify-content:center; color:#fff">Zacznijmy</p>
-      <h2>Porozmawiajmy o Twoim produkcie</h2>
-      <p>Umów bezpłatną konsultację — opowiesz mi o wyzwaniu, a ja podpowiem, od czego zacząć, żeby badania realnie wsparły biznes.</p>
-      <a href="kontakt.html" class="btn btn--light btn--lg">Umów konsultację <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="eyebrow reveal" style="margin-bottom:1rem">Przykładowy projekt</p>
+        <div class="casestudy reveal">
+      <span class="pill">Case study</span>
+      <h3>Archetypy behawioralne OLX</h3>
+      <p>Stworzenie segmentacji behawioralnej dla OLX. Czyli nowa segmentacja klientów w OLX Group, z której firma była tak zadowolona, że chciała, aby mówiono o niej na konferencjach.</p>
+      
     </div>
   </div>
 </section>
-</main>
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Potrzebujesz innej usługi?</p>
+      <h2>Kliknij na wybraną usługę</h2>
+      <p class="lead">…aby przeczytać przykładowe wdrożenie i moje przemyślenia (artykuły) na ten temat.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <a href="badania-ux.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Badania UX</h3>
+        <p>Pozyskaj wiedzę o użytkownikach i przekuj je w biznes z moją pomocą.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="zewnetrzny-dyrektor-ux.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Zewnętrzny Dyrektor UX</h3>
+        <p>Oddeleguj zarządzanie doświadczeniami Twoich klientów bez kosztów etatu.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="audyt-ux.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
+        <h3>Audyt UX</h3>
+        <p>Zacznij od przeglądu UX w Twoim produkcie na bazie mojej wiedzy i analityki.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="konsultacje-i-mentoring.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Konsultacje i mentoring</h3>
+        <p>Indywidualnie przedyskutuj rzeczy lub podnieś swoje kompetencje w UX.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="wystapienia-i-szkolenia.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <h3>Wystąpienia i szkolenia</h3>
+        <p>Zaproś mnie na konferencję lub podnieś kompetencje swojego zespołu.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <div class="center" style="margin-top:2.5rem">
+      <a href="kontakt.html" class="btn btn--primary btn--lg">Umów videorozmowę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+<section class="section--tight center">
+  <div class="wrap"><p class="motto">„Jeżeli mam wybierać między badaniami słabymi a gorszymi, to wolę nie wybierać wcale."</p></div>
+</section></main>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -131,8 +169,6 @@
         <ul>
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="uslugi.html">Usługi</a></li>
-          <li><a href="insights.html">Insights</a></li>
-          <li><a href="o-mnie.html">O mnie</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
@@ -140,7 +176,7 @@
         <h4>Kontakt</h4>
         <ul>
           <li><a href="mailto:krzysiek@quale.agency">krzysiek@quale.agency</a></li>
-          <li><a href="kontakt.html">Umów konsultację</a></li>
+          <li><a href="kontakt.html">Umów videorozmowę</a></li>
           <li><a href="https://quale.agency" target="_blank" rel="noopener">quale.agency</a></li>
         </ul>
       </div>

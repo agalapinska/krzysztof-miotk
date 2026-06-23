@@ -2,8 +2,10 @@
 
 Statyczna, wielostronicowa witryna UX Researchera Krzysztofa Miotka, zaprojektowana spójnie z [quale.agency](https://quale.agency) i brandingiem QUALE (fonty Hanken Grotesk / Inter / Geist Mono, fiolet marki, ostre narożniki, logotyp „Krzysztof Miotk").
 
-## Strony
-`index.html` · `uslugi.html` (+ 6 podstron usług) · `insights.html` · `o-mnie.html` · `kontakt.html`
+## Strony (struktura 1:1 z krzysztofmiotk.pl)
+`index.html` · `uslugi.html` (hub) + 6 podstron usług (Badania UX, Zewnętrzny Dyrektor UX, Segmentacja klientów, Audyt UX, Konsultacje i mentoring, Wystąpienia i szkolenia) · `kontakt.html`
+
+Nawigacja: **Usługi** (rozwijane menu) + **Kontakt**.
 
 ## Podgląd lokalny
 Bez serwera — otwórz `index.html` w przeglądarce. Albo:

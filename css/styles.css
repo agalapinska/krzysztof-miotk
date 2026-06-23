@@ -175,6 +175,23 @@ p  { color: var(--ink-soft); }
   content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background: var(--brand); border-radius: 2px;
 }
 .nav-cta { display: flex; align-items: center; gap: .75rem; }
+
+/* Dropdown „Usługi" */
+.nav-item { position: relative; display: inline-flex; align-items: center; }
+.nav-top { display: inline-flex; align-items: center; gap: .35rem; font-weight: 500; font-size: .98rem; color: var(--ink-soft); cursor: pointer; background: none; }
+.nav-top:hover, .nav-item:hover .nav-top { color: var(--ink); }
+.nav-top .chev { width: 11px; height: 11px; transition: transform .2s var(--ease); }
+.nav-item:hover .nav-top .chev { transform: rotate(180deg); }
+.submenu {
+  position: absolute; top: 100%; left: -12px; min-width: 270px;
+  background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow);
+  padding: .4rem; opacity: 0; visibility: hidden; transform: translateY(6px);
+  transition: opacity .18s var(--ease), transform .18s var(--ease), visibility .18s;
+  display: flex; flex-direction: column;
+}
+.nav-item:hover .submenu, .nav-item:focus-within .submenu { opacity: 1; visibility: visible; transform: none; }
+.submenu a { padding: .65rem .8rem; font-size: .95rem; color: var(--ink-soft); font-weight: 500; }
+.submenu a:hover, .submenu a[aria-current="page"] { background: var(--bg-soft); color: var(--brand); }
 .nav-toggle { display: none; width: 44px; height: 44px; border-radius: 0px; align-items: center; justify-content: center; }
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
   content: ""; display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: .25s var(--ease); position: relative;
@@ -395,6 +412,31 @@ a.card:hover h3 { color: var(--brand); }
 /* badge / pill ogólny */
 .pill { display:inline-flex; align-items:center; gap:.4rem; font-family:var(--font-mono); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--brand-deep); background:var(--brand-light); padding:.4rem .8rem; border-radius:0px; }
 
+/* Metody (numerowane karty) */
+.method-num { font-family: var(--font-mono); font-weight: 500; color: var(--brand); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--brand-lighter); margin-bottom: 1rem; }
+.card .method-num + h3 { margin-top: 0; }
+
+/* Lista „dlaczego warto" / powody */
+.reason { padding: 1.4rem 0; border-top: 1px solid var(--line); }
+.reason:first-child { border-top: none; padding-top: 0; }
+.reason h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+.reason p { font-size: .98rem; }
+
+/* Case study (ciemny blok) */
+.casestudy { background: var(--brand-dark); color: #fff; padding: clamp(28px, 4vw, 48px); }
+.casestudy .pill { background: oklch(100% 0 0 / .14); color: #fff; }
+.casestudy h3 { color: #fff; margin: .9rem 0 .6rem; }
+.casestudy p { color: oklch(100% 0 0 / .8); }
+.casestudy .link-arrow { color: #fff; margin-top: 1.2rem; }
+
+/* Testimonial / cytat klienta */
+.testimonial { border-left: 4px solid var(--brand); padding: .2rem 0 .2rem 1.5rem; }
+.testimonial p { font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.4; color: var(--ink); }
+.testimonial .who { margin-top: 1rem; font-family: var(--font-mono); font-size: .8rem; letter-spacing: .04em; color: var(--muted); }
+
+/* Motto powtarzane na podstronach */
+.motto { font-family: var(--font-display); font-style: italic; font-weight: 500; color: var(--muted); font-size: 1.05rem; }
+
 /* utilities */
 .mt-0{margin-top:0}.mt-1{margin-top:.5rem}.mt-2{margin-top:1rem}.mt-3{margin-top:1.5rem}.mt-4{margin-top:2rem}
 .mb-2{margin-bottom:1rem}.mb-3{margin-bottom:1.5rem}
@@ -429,6 +471,12 @@ a.card:hover h3 { color: var(--brand); }
   body.nav-open .nav-links { transform: none; }
   .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
   .nav-links a[aria-current="page"]::after { display:none; }
+  /* dropdown -> lista na mobile */
+  .nav-item { display: block; }
+  .nav-top { width: 100%; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; color: var(--ink); }
+  .submenu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; min-width: 0; padding: .4rem 0 .6rem .9rem; }
+  .submenu a { font-size: 1rem; }
+  .nav-item:hover .nav-top .chev { transform: none; }
   .nav-toggle { display: inline-flex; }
   .nav .btn--primary.nav-desk { display:none; }
   .grid-2, .grid-3, .grid-4, .stats { grid-template-columns: 1fr; }

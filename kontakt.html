@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kontakt — Krzysztof Miotk</title>
-<meta name="description" content="Skontaktuj się z Krzysztofem Miotkiem — bezpłatna konsultacja wstępna. krzysiek@quale.agency" />
+<meta name="description" content="Porozmawiajmy — umów videorozmowę lub wypełnij brief i otrzymaj wycenę w ciągu 24h. krzysiek@quale.agency" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -17,13 +17,21 @@
       <img src="assets/logo.svg" alt="Krzysztof Miotk" class="brand-logo" width="280" height="42" />
     </a>
     <nav class="nav-links" aria-label="Główna nawigacja">
-      <a href="uslugi.html">Usługi</a>
-      <a href="insights.html">Insights</a>
-      <a href="o-mnie.html">O mnie</a>
+      <div class="nav-item">
+        <a href="uslugi.html" class="nav-top" aria-haspopup="true">Usługi <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="submenu">
+        <a href="badania-ux.html">Badania UX</a>
+        <a href="zewnetrzny-dyrektor-ux.html">Zewnętrzny Dyrektor UX</a>
+        <a href="segmentacja-klientow.html">Segmentacja klientów</a>
+        <a href="audyt-ux.html">Audyt UX</a>
+        <a href="konsultacje-i-mentoring.html">Konsultacje i mentoring</a>
+        <a href="wystapienia-i-szkolenia.html">Wystąpienia i szkolenia</a>
+        </div>
+      </div>
       <a href="kontakt.html" aria-current="page">Kontakt</a>
     </nav>
     <div class="nav-cta">
-      <a href="kontakt.html" class="btn btn--primary nav-desk">Umów konsultację</a>
+      <a href="kontakt.html" class="btn btn--primary nav-desk">Umów rozmowę</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -34,56 +42,37 @@
   <div class="wrap">
     <p class="breadcrumbs"><a href="index.html">Start</a><span>/</span>Kontakt</p>
     <p class="eyebrow">Kontakt</p>
-    <h1 style="max-width:16ch; margin-top:.6rem">Porozmawiajmy o <span class="uline">Twoim produkcie</span></h1>
-    <p class="lead">Opisz krótko swoje wyzwanie. Odezwę się i podpowiem, od czego zacząć, żeby badania realnie wsparły biznes.</p>
+    <h1 style="max-width:14ch; margin-top:.6rem">Porozmawiajmy</h1>
+    <p class="lead">Lubię kontakt twarzą w twarz, więc wrzuć w mój kalendarz spotkanie i zobaczmy co dobrego możemy wspólnie zrobić 🙂</p>
+    <div class="hero-cta" style="margin-top:1.6rem">
+      <a href="#kontakt" class="btn btn--primary btn--lg">Videorozmowa lub mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#brief" class="btn btn--ghost btn--lg">Wyceń swój projekt</a>
+    </div>
   </div>
 </section>
 
-<section class="section--tight">
+<section class="section--tight" id="kontakt">
   <div class="wrap split">
     <div class="reveal">
+      <h2 class="mb-2">Umów rozmowę lub napisz do mnie</h2>
       <form data-demo class="card" style="padding:clamp(24px,3vw,36px)">
-        <div class="field">
-          <label for="name">Imię i nazwisko</label>
-          <input id="name" name="name" type="text" required placeholder="Jan Kowalski" />
-        </div>
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" required placeholder="jan@firma.pl" />
-        </div>
-        <div class="field">
-          <label for="topic">Temat</label>
-          <select id="topic" name="topic">
-            <option>Badania UX</option>
-            <option>Zewnętrzny Dyrektor UX</option>
-            <option>Segmentacja klientów</option>
-            <option>Audyt UX</option>
-            <option>Konsultacje i mentoring</option>
-            <option>Wystąpienia i szkolenia</option>
-            <option>Inny temat</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="msg">Wiadomość</label>
-          <textarea id="msg" name="msg" required placeholder="Opisz krótko swoje wyzwanie i cel biznesowy..."></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary btn--lg btn--block">Wyślij wiadomość <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="field"><label for="k-name">Imię *</label><input id="k-name" type="text" required placeholder="Twoje imię" /></div>
+        <div class="field"><label for="k-email">Adres e-mail *</label><input id="k-email" type="email" required placeholder="jan@firma.pl" /></div>
+        <div class="field"><label for="k-www">Twoja strona www / nazwa aplikacji</label><input id="k-www" type="text" placeholder="np. twojadomena.pl" /></div>
+        <div class="field"><label for="k-msg">W czym mogę Ci pomóc? *</label><textarea id="k-msg" required placeholder="Opisz krótko swój produkt i wyzwanie..."></textarea></div>
+        <button type="submit" class="btn btn--primary btn--lg btn--block">Wyślij <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="small muted" data-note style="margin-top:.9rem; font-size:.85rem">Wysyłając formularz, akceptujesz politykę prywatności.</p>
       </form>
     </div>
-
     <aside class="reveal">
       <div class="sidecard">
         <h4>Bezpośredni kontakt</h4>
-        <p class="muted" style="font-size:.95rem; margin:.5rem 0 1.2rem">Wolisz napisać od razu? Śmiało — odpowiadam na każdą wiadomość.</p>
+        <p class="muted" style="font-size:.95rem; margin:.5rem 0 1.2rem">Wolisz napisać od razu? Odpowiadam na każdą wiadomość.</p>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <a href="mailto:krzysiek@quale.agency" style="color:var(--brand);font-weight:600">krzysiek@quale.agency</a></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Bezpłatna konsultacja wstępna</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Odpowiedź zwykle w 1–2 dni robocze</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Videorozmowa — wrzuć spotkanie w mój kalendarz</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Wycena briefu w ciągu 24h</li>
         </ul>
-        <div class="socials" style="margin-top:1rem">
-          <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener" style="border-color:var(--line-strong)"><svg viewBox="0 0 24 24" fill="var(--brand)"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V24H8V8z"/></svg></a>
-        </div>
       </div>
       <div class="sidecard" style="margin-top:1rem; background:var(--brand-light); border-color:transparent">
         <span class="pill" style="background:#fff">Quale UX</span>
@@ -93,7 +82,47 @@
     </aside>
   </div>
 </section>
-</main>
+
+<section class="section section--soft" id="brief">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Brief</p>
+      <h2>Chcesz otrzymać wycenę bez spotkania?</h2>
+      <p class="lead">Uzupełnij uproszczony brief, a otrzymasz orientacyjną wycenę <strong>w ciągu 24h!</strong></p>
+    </div>
+    <form data-demo class="card reveal" style="padding:clamp(24px,3vw,36px); max-width:760px">
+      <div class="grid grid-2" style="gap:0 1.2rem">
+        <div class="field"><label for="b-name">Imię i nazwisko *</label><input id="b-name" type="text" required /></div>
+        <div class="field"><label for="b-email">Adres e-mail *</label><input id="b-email" type="email" required /></div>
+        <div class="field"><label for="b-role">Twoje stanowisko</label><input id="b-role" type="text" /></div>
+        <div class="field"><label for="b-service">Jaką usługę rozważasz?</label>
+          <select id="b-service">
+            <option>Nie wiem. Potrzebuję pomocy z wyborem.</option>
+            <option>Badanie UX</option>
+            <option>Audyt UX</option>
+            <option>Zewnętrzny Dyrektor UX</option>
+            <option>Wystąpienie</option>
+            <option>Szkolenie</option>
+            <option>Konsultacja</option>
+            <option>Mentoring</option>
+            <option>Inna usługa UX</option>
+            <option>Złożony projekt</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="b-product">O jaki produkt / usługę / firmę chodzi?</label><input id="b-product" type="text" /></div>
+      <div class="field"><label for="b-goal">Cel biznesowy</label><input id="b-goal" type="text" /></div>
+      <div class="field"><label for="b-target">Grupa docelowa</label><input id="b-target" type="text" /></div>
+      <div class="field"><label for="b-other">Inne przydatne informacje</label><textarea id="b-other"></textarea></div>
+      <button type="submit" class="btn btn--dark btn--lg btn--block">Prześlij <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="small muted" data-note style="margin-top:.9rem; font-size:.85rem">Możesz się wypisać kiedy chcesz. Więcej informacji w polityce prywatności.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section--tight center">
+  <div class="wrap"><p class="motto">„Jeżeli mam wybierać między badaniami słabymi a gorszymi, to wolę nie wybierać wcale."</p></div>
+</section></main>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -123,8 +152,6 @@
         <ul>
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="uslugi.html">Usługi</a></li>
-          <li><a href="insights.html">Insights</a></li>
-          <li><a href="o-mnie.html">O mnie</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
@@ -132,7 +159,7 @@
         <h4>Kontakt</h4>
         <ul>
           <li><a href="mailto:krzysiek@quale.agency">krzysiek@quale.agency</a></li>
-          <li><a href="kontakt.html">Umów konsultację</a></li>
+          <li><a href="kontakt.html">Umów videorozmowę</a></li>
           <li><a href="https://quale.agency" target="_blank" rel="noopener">quale.agency</a></li>
         </ul>
       </div>

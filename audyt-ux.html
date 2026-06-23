@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Audyt UX — Krzysztof Miotk</title>
-<meta name="description" content="Zacznij od przeglądu UX w produkcie na bazie wiedzy i analityki." />
+<meta name="description" content="Zwiększ konwersję dzięki spojrzeniu na UX w Twoim produkcie **na bazie mojej wiedzy i analityki.** Dostosuj stronę do wymogów EAA i WCAG." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -17,13 +17,21 @@
       <img src="assets/logo.svg" alt="Krzysztof Miotk" class="brand-logo" width="280" height="42" />
     </a>
     <nav class="nav-links" aria-label="Główna nawigacja">
-      <a href="uslugi.html" aria-current="page">Usługi</a>
-      <a href="insights.html">Insights</a>
-      <a href="o-mnie.html">O mnie</a>
+      <div class="nav-item">
+        <a href="uslugi.html" class="nav-top" aria-haspopup="true">Usługi <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="submenu">
+        <a href="badania-ux.html">Badania UX</a>
+        <a href="zewnetrzny-dyrektor-ux.html">Zewnętrzny Dyrektor UX</a>
+        <a href="segmentacja-klientow.html">Segmentacja klientów</a>
+        <a href="audyt-ux.html" aria-current="page">Audyt UX</a>
+        <a href="konsultacje-i-mentoring.html">Konsultacje i mentoring</a>
+        <a href="wystapienia-i-szkolenia.html">Wystąpienia i szkolenia</a>
+        </div>
+      </div>
       <a href="kontakt.html">Kontakt</a>
     </nav>
     <div class="nav-cta">
-      <a href="kontakt.html" class="btn btn--primary nav-desk">Umów konsultację</a>
+      <a href="kontakt.html" class="btn btn--primary nav-desk">Umów rozmowę</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -33,75 +41,128 @@
 <section class="page-hero">
   <div class="wrap">
     <p class="breadcrumbs"><a href="index.html">Start</a><span>/</span><a href="uslugi.html">Usługi</a><span>/</span>Audyt UX</p>
-    <p class="eyebrow">Audyt</p>
-    <h1 style="max-width:16ch; margin-top:.6rem">Audyt UX</h1>
-    <p class="lead">Zacznij od przeglądu UX w produkcie na bazie wiedzy i analityki.</p>
+    <h1 style="max-width:18ch; margin-top:.4rem">Audyt UX/UI + WCAG</h1>
+    <p class="lead">Zwiększ konwersję dzięki spojrzeniu na UX w Twoim produkcie <strong>na bazie mojej wiedzy i analityki.</strong> Dostosuj stronę do wymogów EAA i WCAG.</p>
     <div class="hero-cta" style="margin-top:1.6rem">
-      <a href="kontakt.html" class="btn btn--primary btn--lg">Umów konsultację <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="kontakt.html" class="btn btn--primary btn--lg">Wyceń usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="uslugi.html" class="btn btn--ghost btn--lg">Wszystkie usługi</a>
     </div>
   </div>
 </section>
-
 <section class="section--tight">
-  <div class="wrap split">
-    <div class="prose reveal">
-      <h2>Dla kogo</h2>
-      <p>Dla firm, które chcą szybko dowiedzieć się, gdzie tracą użytkowników i pieniądze — zanim zainwestują w większy projekt.</p>
-
-      <h2>Co dostajesz</h2>
-      <ul class="checklist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Przegląd kluczowych ścieżek na bazie heurystyk i dobrych praktyk.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Analiza danych ilościowych i miejsc porzuceń w lejku.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Lista problemów uszeregowana według wpływu na biznes.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Konkretne, priorytetyzowane rekomendacje napraw (quick wins + długofalowe).</li>
-      </ul>
-
-      <h2>Jak przebiega współpraca</h2>
-      <div class="steps" style="margin-top:1.2rem">
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Zakres</h4>
-          <p class="muted" style="font-size:.97rem">Wybieramy ścieżki i ekrany o największym znaczeniu biznesowym.</p>
-        </div>
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Przegląd</h4>
-          <p class="muted" style="font-size:.97rem">Analizuję produkt heurystycznie i w oparciu o dane.</p>
-        </div>
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Priorytety</h4>
-          <p class="muted" style="font-size:.97rem">Porządkuję znaleziska według wpływu i kosztu naprawy.</p>
-        </div>
-        <div class="step stack" style="margin-bottom:1.4rem">
-          <h4>Raport decyzyjny</h4>
-          <p class="muted" style="font-size:.97rem">Dostajesz mapę drogową napraw gotową do wdrożenia.</p>
-        </div>
-      </div>
-    </div>
-
-    <aside class="reveal">
-      <div class="sidecard">
-        <span class="pill">Audyt</span>
-        <h4 style="margin-top:1rem">Audyt UX</h4>
-        <div class="price">Pakiet stały <small>· od przeglądu pojedynczej ścieżki</small></div>
-        <p class="muted" style="font-size:.95rem; margin:.6rem 0 1.2rem">Najlepiej zacznijmy od krótkiej rozmowy — dopasuję zakres do Twojej sytuacji i celu biznesowego.</p>
-        <a href="kontakt.html" class="btn btn--primary btn--block">Porozmawiajmy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="mailto:krzysiek@quale.agency" class="btn btn--ghost btn--block" style="margin-top:.6rem">krzysiek@quale.agency</a>
-      </div>
-    </aside>
+  <div class="wrap maxw-prose reveal">
+    <h2>Czym jest audyt UX w moim wykonaniu?</h2>
+    <p>Audyt UX/UI bierze pod uwagę <strong>kontekst biznesu, rynku</strong>, w którym uczestniczy badany produkt <strong>oraz wzorce projektowe bazujące</strong> na <strong>Heurystykach Nielsena</strong> oraz <strong>naukach kognitywistycznych</strong>.</p><p><strong>Do całości zostaje dodane moje doświadczenie</strong>, czyli tysiące godzin z różnymi produktami i branżami.</p><p>Dzięki temu mój audyt pozwala <strong>zwiększyć konwersję na wielu etapach, zwiększyć ROI z marketingu, oraz wpłynąć na retencję</strong> (powracalność) obecnych klientów.</p><p>Każdy błąd jest podzielony według <strong>3-stopniowej skali</strong>, co pozwala zarządzić Ci priorytetami zmian (i budżetem). A do tego do każdego błędu otrzymujesz <strong>rekomendację</strong> jak naprawić ten błąd.</p><p>Mój proces Audytu UX/UI to:</p><ul class="checklist"><li><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg> <strong>Analiza danych historycznych</strong>, np. Google Analytics i HotJar – pozwala wykryć błędy systemu z przeszłości.</li><li><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg> <strong>Analiza ekspercka</strong> – przechodzimy przez ustalone ścieżki zakupowe i wykrywamy błędy niezgodne z przyjętymi wzorcami – pozwala to wykryć błędy, na które użytkownicy jeszcze nie trafiają.</li><li><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg> <strong>Analiza WCAG</strong> – aby strona była nie tylko użyteczna, ale też dostępna (więcej osób z niej skorzysta + dostosujesz się do wymogów EAA).</li></ul>
   </div>
 </section>
-
-<section class="section section--tight">
+<section class="section--tight">
+  <div class="wrap reveal">
+    <h2>Jak wygląda proces?</h2>
+    <div class="steps grid grid-2" style="margin-top:1.4rem">
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Omówienie celów biznesowych</h4>
+        <p class="muted" style="font-size:.97rem">Spotykamy się na videorozmowę i rozmawiamy o Twoim produkcie. Poznaję <strong>kontekst Twojego produktu, ograniczenia technologiczne i możliwości.</strong></p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Dostęp do danych analitycznych</h4>
+        <p class="muted" style="font-size:.97rem">Przekazujesz mi dostępy do danych analitycznych Twojego produktu – np. Google Analytics, HotJar/Clarity. Jeżeli nie posiadasz tych narzędzi – powiem Ci jak to dodać przed audytem.</p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Sprawdzenie danych historycznych</h4>
+        <p class="muted" style="font-size:.97rem">Początek audytu zaczynam od danych historycznych – <strong>na bazie udzielonych dostępów wytyczam ścieżki i diagnozuję</strong> w jaki sposób powinien być przeprowadzony audyt.</p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Wykorzystanie kognitywistyki i wzorców</h4>
+        <p class="muted" style="font-size:.97rem">Korzystając z moich doświadczeń, ale też wiedzy o kognitywistyce, heurystykach i wzorcach projektowych wykonuję <strong>audyt ekspercki.</strong> W połączeniu z analityką uzyskujemy <strong>listę błędów.</strong></p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Priorytetyzacja błędów i rekomendacje</h4>
+        <p class="muted" style="font-size:.97rem">Każdy błąd ma nadany <strong>poziom, priorytet naprawy (3 stopnie)</strong> i <strong>rekomendacje</strong> – aby Twój zespół mógł rozsądnie zaplanować naprawę.</p>
+      </div>
+      <div class="step stack" style="margin-bottom:.4rem">
+        <h4>Kontrola rezultatów po 3 miesiącach</h4>
+        <p class="muted" style="font-size:.97rem">To optymalny czas, aby naprawić najważniejsze rzeczy i widzieć rezultaty. <strong>Po 3 miesiącach możesz podziękować sobie</strong> za to, że zaufałeś(-aś) mi przy audycie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--soft">
   <div class="wrap">
-    <div class="cta-band reveal">
-      <p class="eyebrow" style="justify-content:center; color:#fff">Zacznijmy</p>
-      <h2>Porozmawiajmy o Twoim produkcie</h2>
-      <p>Umów bezpłatną konsultację — opowiesz mi o wyzwaniu, a ja podpowiem, od czego zacząć, żeby badania realnie wsparły biznes.</p>
-      <a href="kontakt.html" class="btn btn--light btn--lg">Umów konsultację <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="section-head reveal"><h2>Dlaczego warto zrobić audyt UX ze mną?</h2></div>
+    <div class="reveal">
+      <div class="reason">
+        <h3>Ponad 2500 sesji badawczych w kilkudziesięciu firmach</h3>
+        <p>Jestem doświadczonym moderatorem, który prowadził badania dla zróżnicowanych branż i grup docelowych – od usług bankowych, przez start-upy, aż po usługi offline dla sektora publicznego. <strong>Tę wiedzę wykorzystuję również w audycie dla Ciebie.</strong></p>
+      </div>
+      <div class="reason">
+        <h3>Umiejętność przekuwania badań w rozwiązania</h3>
+        <p>Pracowałem jako Project Manager, a na co dzień jestem konsultantem biznesowym. Nie tylko pozyskuję dane, ale widzę <strong>jak można je przekuć w rozwiązania – zarówno projektowe, jak i strategiczne.</strong></p>
+      </div>
+      <div class="reason">
+        <h3>Priorytetyzacja wyników i błędów użyteczności</h3>
+        <p>Każdy mój raport posiada wskazanie <strong>5-10 najważniejszych</strong> wniosków, które zasilą Twój biznes. Błędy użyteczności dzielę na <strong>3-stopniową skalę, która wskazuje priorytet naprawy</strong>.</p>
+      </div>
     </div>
   </div>
 </section>
-</main>
+<section class="section--tight">
+  <div class="wrap">
+    <p class="eyebrow reveal" style="margin-bottom:1rem">Przykładowy projekt</p>
+        <div class="casestudy reveal">
+      <span class="pill">Przykładowy projekt</span>
+      <h3>Raport z Audytu UX/UI sklepu noo.ma</h3>
+      <p>Zostaw mail i rzuć okiem na uproszczony raport dla sklepu noo.ma. Oprócz raportu otrzymasz też dostęp do mojego newslettera z unikalnymi treściami.</p>
+      <a href="kontakt.html" class="link-arrow">Chcę raport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Potrzebujesz innej usługi?</p>
+      <h2>Kliknij na wybraną usługę</h2>
+      <p class="lead">…aby przeczytać przykładowe wdrożenie i moje przemyślenia (artykuły) na ten temat.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <a href="badania-ux.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Badania UX</h3>
+        <p>Pozyskaj wiedzę o użytkownikach i przekuj je w biznes z moją pomocą.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="zewnetrzny-dyrektor-ux.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Zewnętrzny Dyrektor UX</h3>
+        <p>Oddeleguj zarządzanie doświadczeniami Twoich klientów bez kosztów etatu.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="segmentacja-klientow.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H4a1 1 0 0 1-1-1V3"/><path d="M7 16l4-5 3 3 5-7"/></svg></div>
+        <h3>Segmentacja klientów</h3>
+        <p>Zrozum, którzy klienci przynoszą największy zysk i jak o nich zadbać.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="konsultacje-i-mentoring.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Konsultacje i mentoring</h3>
+        <p>Indywidualnie przedyskutuj rzeczy lub podnieś swoje kompetencje w UX.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="wystapienia-i-szkolenia.html" class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <h3>Wystąpienia i szkolenia</h3>
+        <p>Zaproś mnie na konferencję lub podnieś kompetencje swojego zespołu.</p>
+        <span class="card-foot link-arrow">Zobacz usługę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <div class="center" style="margin-top:2.5rem">
+      <a href="kontakt.html" class="btn btn--primary btn--lg">Umów videorozmowę <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+<section class="section--tight center">
+  <div class="wrap"><p class="motto">„Jeżeli mam wybierać między badaniami słabymi a gorszymi, to wolę nie wybierać wcale."</p></div>
+</section></main>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -131,8 +192,6 @@
         <ul>
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="uslugi.html">Usługi</a></li>
-          <li><a href="insights.html">Insights</a></li>
-          <li><a href="o-mnie.html">O mnie</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
@@ -140,7 +199,7 @@
         <h4>Kontakt</h4>
         <ul>
           <li><a href="mailto:krzysiek@quale.agency">krzysiek@quale.agency</a></li>
-          <li><a href="kontakt.html">Umów konsultację</a></li>
+          <li><a href="kontakt.html">Umów videorozmowę</a></li>
           <li><a href="https://quale.agency" target="_blank" rel="noopener">quale.agency</a></li>
         </ul>
       </div>
