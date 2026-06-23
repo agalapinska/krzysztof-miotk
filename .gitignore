@@ -1,0 +1,4 @@
+# lokalne / narzędziowe
+.claude/
+.DS_Store
+*.log
