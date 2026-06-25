@@ -86,11 +86,18 @@ def head(title, desc, path="index.html", jsonld=""):
 <a class="skip-link" href="#main">Przejdź do treści</a>'''
 
 
-def submenu(active_slug):
+MEGA_ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
+              'stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>')
+
+
+def mega(active_slug):
     items = ""
     for slug, label in SERVICE_NAV:
         cur = ' aria-current="page"' if slug == active_slug else ""
-        items += f'        <a href="{slug}.html"{cur}>{label}</a>\n'
+        items += (f'            <a href="{slug}.html"{cur}>\n'
+                  f'              <span class="mega-name">{label} {MEGA_ARROW}</span>\n'
+                  f'              <span class="mega-desc">{TAGLINES[slug]}</span>\n'
+                  f'            </a>\n')
     return items
 
 
@@ -108,8 +115,17 @@ def header(active):
     <nav class="nav-links" aria-label="Główna nawigacja">
       <div class="nav-item">
         <a href="uslugi.html" class="nav-top"{uslugi_cur} aria-haspopup="true">Usługi {CHEV}</a>
-        <div class="submenu">
-{submenu(active if active in TAGLINES else "")}        </div>
+        <div class="megamenu">
+          <div class="wrap megamenu-inner">
+            <div class="mega-intro">
+              <p class="eyebrow">Usługi</p>
+              <h3>Wsparcie UX dopasowane do etapu Twojego produktu</h3>
+              <a href="uslugi.html" class="link-arrow">Wszystkie usługi {ARROW}</a>
+            </div>
+            <div class="mega-grid">
+{mega(active if active in TAGLINES else "")}            </div>
+          </div>
+        </div>
       </div>
       <a href="kontakt.html"{kontakt_cur}>Kontakt</a>
     </nav>
