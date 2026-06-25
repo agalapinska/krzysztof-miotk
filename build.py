@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Generator podstron krzysztofmiotk.pl — treść 1:1 z oryginału, branding QUALE."""
-import os, re, json
+import os, re, json, datetime
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 # Adres produkcyjny (GitHub Pages). Zmień na https://krzysztofmiotk.pl/ po podpięciu własnej domeny.
@@ -741,5 +741,29 @@ polityka_body = f'''
 write("polityka-prywatnosci.html", "Polityka prywatności — Krzysztof Miotk",
       "Zasady przetwarzania danych osobowych i wykorzystania plików cookies w serwisie krzysztofmiotk.pl.",
       "", polityka_body)
+
+# ===========================================================================
+#  SITEMAP.XML + ROBOTS.TXT (SEO / indeksacja)
+# ===========================================================================
+sitemap_pages = ([("index.html", "1.0"), ("uslugi.html", "0.9")]
+                 + [(slug + ".html", "0.8") for slug, _ in SERVICE_NAV]
+                 + [("kontakt.html", "0.7"), ("polityka-prywatnosci.html", "0.3")])
+today = datetime.date.today().isoformat()
+urls = "".join(
+    f"  <url>\n    <loc>{BASE_URL}{p}</loc>\n    <lastmod>{today}</lastmod>\n"
+    f"    <changefreq>monthly</changefreq>\n    <priority>{pr}</priority>\n  </url>\n"
+    for p, pr in sitemap_pages)
+sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           + urls + "</urlset>\n")
+with open(os.path.join(BASE, "sitemap.xml"), "w", encoding="utf-8") as f:
+    f.write(sitemap)
+print("✓ sitemap.xml")
+
+robots = ("User-agent: *\nAllow: /\n\n"
+          f"Sitemap: {BASE_URL}sitemap.xml\n")
+with open(os.path.join(BASE, "robots.txt"), "w", encoding="utf-8") as f:
+    f.write(robots)
+print("✓ robots.txt")
 
 print("\\nGotowe — podstrony 1:1 wygenerowane.")

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agalapinska.github.io/krzysztof-miotk/sitemap.xml
