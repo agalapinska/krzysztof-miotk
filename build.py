@@ -142,7 +142,7 @@ FOOTER = f'''
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2025</span> Krzysztof Miotk. Wszelkie prawa zastrzeżone.</span>
-      <a href="#">Polityka prywatności</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
     </div>
   </div>
 </footer>
@@ -558,9 +558,21 @@ kontakt_body = f'''
     <h1 style="max-width:14ch; margin-top:.6rem">Porozmawiajmy</h1>
     <p class="lead">Lubię kontakt twarzą w twarz, więc wrzuć w mój kalendarz spotkanie i zobaczmy co dobrego możemy wspólnie zrobić 🙂</p>
     <div class="hero-cta" style="margin-top:1.6rem">
-      <a href="#kontakt" class="btn btn--primary btn--lg">Videorozmowa lub mail {ARROW}</a>
-      <a href="#brief" class="btn btn--ghost btn--lg">Wyceń swój projekt</a>
+      <a href="#kalendarz" class="btn btn--primary btn--lg">Umów videorozmowę {ARROW}</a>
+      <a href="#kontakt" class="btn btn--ghost btn--lg">Napisz wiadomość</a>
+      <a href="#brief" class="btn btn--ghost btn--lg">Wyceń projekt</a>
     </div>
+  </div>
+</section>
+
+<section class="section--tight" id="kalendarz">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Kalendarz</p>
+      <h2>Wrzuć spotkanie w mój kalendarz</h2>
+      <p class="lead">Wybierz dogodny termin na bezpłatną videorozmowę — porozmawiamy o Twoim produkcie i celu.</p>
+    </div>
+    <div id="calendar-embed" class="reveal"></div>
   </div>
 </section>
 
@@ -568,13 +580,13 @@ kontakt_body = f'''
   <div class="wrap split">
     <div class="reveal">
       <h2 class="mb-2">Umów rozmowę lub napisz do mnie</h2>
-      <form data-demo class="card" style="padding:clamp(24px,3vw,36px)">
-        <div class="field"><label for="k-name">Imię *</label><input id="k-name" type="text" required placeholder="Twoje imię" /></div>
-        <div class="field"><label for="k-email">Adres e-mail *</label><input id="k-email" type="email" required placeholder="jan@firma.pl" /></div>
-        <div class="field"><label for="k-www">Twoja strona www / nazwa aplikacji</label><input id="k-www" type="text" placeholder="np. twojadomena.pl" /></div>
-        <div class="field"><label for="k-msg">W czym mogę Ci pomóc? *</label><textarea id="k-msg" required placeholder="Opisz krótko swój produkt i wyzwanie..."></textarea></div>
+      <form data-form data-subject="Kontakt ze strony — Krzysztof Miotk" class="card" style="padding:clamp(24px,3vw,36px)">
+        <div class="field"><label for="k-name">Imię *</label><input id="k-name" name="imie" type="text" required placeholder="Twoje imię" /></div>
+        <div class="field"><label for="k-email">Adres e-mail *</label><input id="k-email" name="email" type="email" required placeholder="jan@firma.pl" /></div>
+        <div class="field"><label for="k-www">Twoja strona www / nazwa aplikacji</label><input id="k-www" name="www" type="text" placeholder="np. twojadomena.pl" /></div>
+        <div class="field"><label for="k-msg">W czym mogę Ci pomóc? *</label><textarea id="k-msg" name="wiadomosc" required placeholder="Opisz krótko swój produkt i wyzwanie..."></textarea></div>
         <button type="submit" class="btn btn--primary btn--lg btn--block">Wyślij {ARROW}</button>
-        <p class="small muted" data-note style="margin-top:.9rem; font-size:.85rem">Wysyłając formularz, akceptujesz politykę prywatności.</p>
+        <p class="small muted" data-note style="margin-top:.9rem; font-size:.85rem">Wysyłając formularz, akceptujesz <a href="polityka-prywatnosci.html">politykę prywatności</a>.</p>
       </form>
     </div>
     <aside class="reveal">
@@ -603,22 +615,22 @@ kontakt_body = f'''
       <h2>Chcesz otrzymać wycenę bez spotkania?</h2>
       <p class="lead">Uzupełnij uproszczony brief, a otrzymasz orientacyjną wycenę <strong>w ciągu 24h!</strong></p>
     </div>
-    <form data-demo class="card reveal" style="padding:clamp(24px,3vw,36px); max-width:760px">
+    <form data-form data-subject="Brief / wycena — Krzysztof Miotk" class="card reveal" style="padding:clamp(24px,3vw,36px); max-width:760px">
       <div class="grid grid-2" style="gap:0 1.2rem">
-        <div class="field"><label for="b-name">Imię i nazwisko *</label><input id="b-name" type="text" required /></div>
-        <div class="field"><label for="b-email">Adres e-mail *</label><input id="b-email" type="email" required /></div>
-        <div class="field"><label for="b-role">Twoje stanowisko</label><input id="b-role" type="text" /></div>
+        <div class="field"><label for="b-name">Imię i nazwisko *</label><input id="b-name" name="imie_nazwisko" type="text" required /></div>
+        <div class="field"><label for="b-email">Adres e-mail *</label><input id="b-email" name="email" type="email" required /></div>
+        <div class="field"><label for="b-role">Twoje stanowisko</label><input id="b-role" name="stanowisko" type="text" /></div>
         <div class="field"><label for="b-service">Jaką usługę rozważasz?</label>
-          <select id="b-service">
+          <select id="b-service" name="usluga">
 {brief_select}          </select>
         </div>
       </div>
-      <div class="field"><label for="b-product">O jaki produkt / usługę / firmę chodzi?</label><input id="b-product" type="text" /></div>
-      <div class="field"><label for="b-goal">Cel biznesowy</label><input id="b-goal" type="text" /></div>
-      <div class="field"><label for="b-target">Grupa docelowa</label><input id="b-target" type="text" /></div>
-      <div class="field"><label for="b-other">Inne przydatne informacje</label><textarea id="b-other"></textarea></div>
+      <div class="field"><label for="b-product">O jaki produkt / usługę / firmę chodzi?</label><input id="b-product" name="produkt" type="text" /></div>
+      <div class="field"><label for="b-goal">Cel biznesowy</label><input id="b-goal" name="cel_biznesowy" type="text" /></div>
+      <div class="field"><label for="b-target">Grupa docelowa</label><input id="b-target" name="grupa_docelowa" type="text" /></div>
+      <div class="field"><label for="b-other">Inne przydatne informacje</label><textarea id="b-other" name="inne"></textarea></div>
       <button type="submit" class="btn btn--dark btn--lg btn--block">Prześlij {ARROW}</button>
-      <p class="small muted" data-note style="margin-top:.9rem; font-size:.85rem">Możesz się wypisać kiedy chcesz. Więcej informacji w polityce prywatności.</p>
+      <p class="small muted" data-note style="margin-top:.9rem; font-size:.85rem">Możesz się wypisać kiedy chcesz. Więcej informacji w <a href="polityka-prywatnosci.html">polityce prywatności</a>.</p>
     </form>
   </div>
 </section>
@@ -631,4 +643,66 @@ write("kontakt.html", "Kontakt — Krzysztof Miotk",
       "Porozmawiajmy — umów videorozmowę lub wypełnij brief i otrzymaj wycenę w ciągu 24h. krzysiek@quale.agency",
       "kontakt", kontakt_body)
 
-print("\nGotowe — podstrony 1:1 wygenerowane.")
+# ===========================================================================
+#  POLITYKA PRYWATNOŚCI (RODO)
+# ===========================================================================
+polityka_body = f'''
+<section class="page-hero">
+  <div class="wrap">
+    <p class="breadcrumbs"><a href="index.html">Start</a><span>/</span>Polityka prywatności</p>
+    <h1 style="margin-top:.4rem">Polityka prywatności</h1>
+    <p class="lead">Zasady przetwarzania danych osobowych oraz wykorzystania plików cookies w serwisie krzysztofmiotk.pl.</p>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap legal reveal">
+    <p class="note">Ten dokument jest wzorem przygotowanym pod ten serwis. Przed publikacją uzupełnij dane administratora (pełna nazwa działalności, NIP, adres) i — jeśli używasz analityki lub newslettera — dopisz konkretne narzędzia i ich dostawców.</p>
+
+    <h2>1. Administrator danych</h2>
+    <p>Administratorem Twoich danych osobowych jest Krzysztof Miotk, prowadzący działalność pod adresem e-mail <a href="mailto:krzysiek@quale.agency">krzysiek@quale.agency</a> (dalej „Administrator”). Dane rejestrowe: <strong>[pełna nazwa działalności]</strong>, NIP <strong>[NIP]</strong>, adres <strong>[adres]</strong>.</p>
+
+    <h2>2. Jakie dane zbieram</h2>
+    <p>Przetwarzam dane, które samodzielnie podajesz w formularzach na stronie:</p>
+    <ul>
+      <li><strong>Formularz kontaktowy:</strong> imię, adres e-mail, opcjonalnie adres strony/aplikacji oraz treść wiadomości.</li>
+      <li><strong>Brief / wycena:</strong> imię i nazwisko, adres e-mail, stanowisko oraz informacje o produkcie i celu biznesowym.</li>
+      <li><strong>Newsletter:</strong> adres e-mail (jeśli zapiszesz się do newslettera).</li>
+      <li><strong>Dane techniczne:</strong> informacje zbierane automatycznie przez pliki cookies (patrz pkt 5).</li>
+    </ul>
+
+    <h2>3. Cele i podstawy prawne przetwarzania</h2>
+    <ul>
+      <li>Odpowiedź na zapytanie i obsługa kontaktu — art. 6 ust. 1 lit. b oraz f RODO (podjęcie działań na żądanie / uzasadniony interes Administratora).</li>
+      <li>Przygotowanie wyceny i ewentualne zawarcie umowy — art. 6 ust. 1 lit. b RODO.</li>
+      <li>Wysyłka newslettera — art. 6 ust. 1 lit. a RODO (Twoja zgoda), którą możesz w każdej chwili wycofać.</li>
+      <li>Zapewnienie poprawnego działania serwisu — art. 6 ust. 1 lit. f RODO.</li>
+    </ul>
+
+    <h2>4. Dobrowolność podania danych</h2>
+    <p>Podanie danych jest dobrowolne, ale niezbędne do wysłania zapytania, otrzymania wyceny lub newslettera. Bez nich nie będę w stanie odpowiedzieć na Twoją wiadomość.</p>
+
+    <h2>5. Pliki cookies</h2>
+    <p>Serwis korzysta z plików cookies niezbędnych do jego prawidłowego działania (m.in. zapamiętanie zgody na cookies). Jeżeli w przyszłości zostaną dodane narzędzia analityczne lub marketingowe (np. Google Analytics), zostaną one uruchomione dopiero po wyrażeniu zgody, a niniejsza polityka zostanie zaktualizowana o ich dostawców i okresy przechowywania. Ustawienia cookies możesz zmienić w swojej przeglądarce.</p>
+
+    <h2>6. Odbiorcy danych</h2>
+    <p>Twoje dane mogą być powierzone zaufanym podmiotom wspierającym działanie serwisu, w szczególności: dostawcy hostingu, dostawcy usługi obsługi formularzy (np. Formspree), dostawcy kalendarza rezerwacji (np. Calendly / Cal.com) oraz dostawcy narzędzia do newslettera — wyłącznie w zakresie niezbędnym do realizacji powyższych celów.</p>
+
+    <h2>7. Okres przechowywania</h2>
+    <p>Dane z korespondencji przechowuję przez czas niezbędny do obsługi sprawy oraz przez okres przedawnienia ewentualnych roszczeń. Dane przetwarzane na podstawie zgody (newsletter) — do czasu jej wycofania.</p>
+
+    <h2>8. Twoje prawa</h2>
+    <p>Masz prawo do: dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, wniesienia sprzeciwu oraz cofnięcia zgody w dowolnym momencie. Przysługuje Ci również prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (UODO).</p>
+
+    <h2>9. Kontakt</h2>
+    <p>We wszystkich sprawach dotyczących danych osobowych napisz na: <a href="mailto:krzysiek@quale.agency">krzysiek@quale.agency</a>.</p>
+
+    <p class="muted" style="margin-top:2rem; font-size:.9rem">Ostatnia aktualizacja: 2026. Dokument może być aktualizowany wraz z rozwojem serwisu.</p>
+  </div>
+</section>'''
+
+write("polityka-prywatnosci.html", "Polityka prywatności — Krzysztof Miotk",
+      "Zasady przetwarzania danych osobowych i wykorzystania plików cookies w serwisie krzysztofmiotk.pl.",
+      "", polityka_body)
+
+print("\\nGotowe — podstrony 1:1 wygenerowane.")
