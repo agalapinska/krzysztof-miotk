@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Generator podstron krzysztofmiotk.pl — treść 1:1 z oryginału, branding QUALE."""
-import os, re
+import os, re, json
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+# Adres produkcyjny (GitHub Pages). Zmień na https://krzysztofmiotk.pl/ po podpięciu własnej domeny.
+BASE_URL = "https://agalapinska.github.io/krzysztof-miotk/"
 
 ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
          'stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>')
@@ -48,7 +50,9 @@ def md(t):
 
 
 # --------------------------------------------------------------------- szkielet
-def head(title, desc):
+def head(title, desc, path="index.html", jsonld=""):
+    canonical = BASE_URL + path
+    jl = f'\n<script type="application/ld+json">{jsonld}</script>' if jsonld else ""
     return f'''<!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -56,12 +60,30 @@ def head(title, desc):
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content="{desc}" />
+<link rel="canonical" href="{canonical}" />
+<meta name="theme-color" content="#6E47E5" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:site_name" content="Krzysztof Miotk" />
+<meta property="og:title" content="{title}" />
+<meta property="og:description" content="{desc}" />
+<meta property="og:url" content="{canonical}" />
+<meta property="og:image" content="{BASE_URL}assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{title}" />
+<meta name="twitter:description" content="{desc}" />
+<meta name="twitter:image" content="{BASE_URL}assets/og-image.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/styles.css" />{jl}
 </head>
-<body>'''
+<body>
+<a class="skip-link" href="#main">Przejdź do treści</a>'''
 
 
 def submenu(active_slug):
@@ -92,7 +114,7 @@ def header(active):
       <a href="kontakt.html"{kontakt_cur}>Kontakt</a>
     </nav>
     <div class="nav-cta">
-      <a href="kontakt.html" class="btn btn--primary nav-desk">Umów rozmowę</a>
+      <a href="kontakt.html#kalendarz" class="btn btn--primary nav-desk">Umów rozmowę</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -153,11 +175,25 @@ FOOTER = f'''
 '''
 
 
-def write(name, title, desc, active, body):
-    html = head(title, desc) + header(active) + "<main>\n" + body + "</main>\n" + FOOTER
+def write(name, title, desc, active, body, jsonld=""):
+    html = head(title, desc, name, jsonld) + header(active) + '<main id="main">\n' + body + "</main>\n" + FOOTER
     with open(os.path.join(BASE, name), "w", encoding="utf-8") as f:
         f.write(html)
     print("✓", name)
+
+
+def service_jsonld(s):
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": s["name"],
+        "serviceType": s["name"],
+        "description": s["lead"].replace("**", ""),
+        "provider": {"@type": "Person", "name": "Krzysztof Miotk", "url": BASE_URL,
+                     "jobTitle": "UX Researcher i konsultant"},
+        "areaServed": "PL",
+        "url": BASE_URL + s["slug"] + ".html"
+    }, ensure_ascii=False)
 
 
 # --------------------------------------------------------------------- renderery
@@ -325,7 +361,8 @@ def service_page(s):
 <section class="section--tight center">
   <div class="wrap"><p class="motto">„{MOTTO}"</p></div>
 </section>'''
-    write(s["slug"] + ".html", f'{s["name"]} — Krzysztof Miotk', s["lead"], s["slug"], body)
+    write(s["slug"] + ".html", f'{s["name"]} — Krzysztof Miotk', s["lead"].replace("**", ""),
+          s["slug"], body, jsonld=service_jsonld(s))
 
 
 # ===========================================================================
