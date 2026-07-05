@@ -549,3 +549,48 @@ a.card:hover h3 { color: var(--brand); }
   .hero-badge { left: 14px; right: 14px; bottom: 14px; background: oklch(20% 0.12 282 / .72); border-color: oklch(100% 0 0 / .2); }
   .hero-badge .name { font-size: 1.15rem; line-height: 1.15; }
 }
+
+/* =========================================================================
+   Animacje i mikrointerakcje (z designu „Strona główna — ikony i animacje")
+   ========================================================================= */
+::selection { background: oklch(57.2% 0.21 280 / .25); }
+
+@keyframes km-ripple { from { transform: scale(0); opacity: .4; } to { transform: scale(2.6); opacity: 0; } }
+@keyframes km-gradient-drift { 0%{background-position:0% 0%} 25%{background-position:80% 30%} 50%{background-position:100% 100%} 75%{background-position:20% 70%} 100%{background-position:0% 0%} }
+@keyframes km-glow-pulse { 0%,100%{opacity:.4;transform:scale(1) translate(0,0)} 33%{opacity:1;transform:scale(1.18) translate(-40px,30px)} 66%{opacity:.7;transform:scale(1.05) translate(30px,-20px)} }
+
+/* Marker animowany (wjeżdża scaleX) */
+.mark::before { transform-origin: left center; }
+.mark.mark-hidden::before { transform: rotate(-1.6deg) scaleX(0); }
+.mark.mark-in::before { transform: rotate(-1.6deg) scaleX(1); transition: transform .55s cubic-bezier(.22,.61,.36,1); }
+
+/* Glow na kartach (podąża za kursorem) */
+.card { position: relative; }
+.card-glow { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 0; }
+.card > *:not(.card-glow) { position: relative; z-index: 1; }
+
+/* Ripple na przyciskach */
+.btn { position: relative; overflow: hidden; }
+.btn .km-ripple { position: absolute; border-radius: 50%; background: currentColor; pointer-events: none; opacity: .35; }
+
+/* Zdjęcie hero (wysoki portret) */
+.hero-photo { width:100%; height:auto; aspect-ratio: 9/10; object-fit: cover; object-position: 50% 18%; display:block; box-shadow: var(--shadow-brand); }
+
+/* Plakietka „Etap:" na karcie usługi */
+.svc-stage { margin-top: 1rem; display: inline-flex; align-self: flex-start; align-items: center; font-family: var(--font-mono); font-weight: 500; font-size: .72rem; letter-spacing: .02em; color: var(--muted); background: var(--brand-lighter); padding: .32rem .6rem; }
+
+/* Cylinder z nazwami usług (hero) */
+.svc-roller { display:inline-flex; align-items:center; perspective:500px; white-space:nowrap; overflow:hidden; font-weight:400; font-size:.85rem; opacity:.75; margin-left:.55rem; }
+.svc-roller span { display:inline-block; transform-origin:center center; backface-visibility:hidden; will-change:transform,opacity; }
+
+/* CTA band — animowany, dryfujący gradient + pulsujące poświaty */
+.cta-band.cta-anim { background: linear-gradient(140deg, oklch(22% 0.14 282) 0%, #15172c 28%, oklch(42% 0.19 288) 50%, #15172c 72%, oklch(20% 0.1 295) 100%); background-size: 350% 350%; animation: km-gradient-drift 12s ease-in-out infinite; }
+.cta-band.cta-anim::before { animation: km-glow-pulse 9s ease-in-out infinite; }
+.cta-band.cta-anim::after  { animation: km-glow-pulse 11s ease-in-out 3s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-band.cta-anim { animation: none; }
+  .cta-band.cta-anim::before, .cta-band.cta-anim::after { animation: none; }
+  .mark.mark-hidden::before { transform: rotate(-1.6deg) scaleX(1); }
+  .svc-roller { display: none; }
+}
