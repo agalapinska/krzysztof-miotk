@@ -73,15 +73,15 @@ ul { list-style: none; padding: 0; }
 /* ------------------------------------------------------------ Typografia */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
-h1 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); }
-h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); }
-h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); letter-spacing: -0.015em; }
-h4 { font-size: 1.12rem; font-weight: 700; }
+h1 { font-weight: 600; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 0.9; }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 0.9; }
+h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); line-height: 0.95; }
+h4 { font-size: 1.12rem; }
 p  { color: var(--ink-soft); }
 
 .eyebrow {
@@ -350,12 +350,12 @@ a.card:hover h3 { color: var(--brand); }
 
 /* ---------------------------------------------------------------- Stat / quote */
 .stats { display:grid; grid-template-columns: repeat(3,1fr); gap: clamp(18px,2vw,28px); }
-.stat .num { font-family: var(--font-display); font-weight: 900; font-size: clamp(2.4rem,4vw,3.4rem); color: var(--brand); letter-spacing:-.03em; line-height:1; }
+.stat .num { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem,4vw,3.4rem); color: var(--brand); letter-spacing:-.03em; line-height:1; }
 .stat .cap { color: var(--muted); margin-top:.4rem; font-size:.95rem; }
 
 .quote {
-  font-family: var(--font-display); font-weight: 800; letter-spacing:-.02em;
-  font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.2; color: var(--ink);
+  font-family: var(--font-display); font-weight: 500; letter-spacing:-.03em;
+  font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 0.95; color: var(--ink);
 }
 .quote .mark { color:#fff; }
 

@@ -101,10 +101,11 @@
   }
 
   /* --- reveal on scroll (+ stagger, + uruchomienie animacji wewnątrz) --- */
+  var ICON_SEL = "[data-ico], [data-check], .card .ico svg, .checklist li svg";
   var revealEls = document.querySelectorAll(".reveal");
   function revealInner(root) {
     if (!REDUCE) {
-      root.querySelectorAll("[data-ico], [data-check]").forEach(function (svg) { draw(svg, 900); });
+      root.querySelectorAll(ICON_SEL).forEach(function (svg) { draw(svg, 900); });
     }
     root.querySelectorAll("[data-count]").forEach(function (el) { countUp(el); });
   }
@@ -136,11 +137,11 @@
         else if (!REDUCE) { prep(el); draw(el, 900); }
       });
     }, { threshold: 0.3 });
-    document.querySelectorAll("[data-ico]:not(.reveal [data-ico]), [data-check]:not(.reveal [data-check]), [data-count]:not(.reveal [data-count])")
-      .forEach(function (el) {
-        if (!REDUCE && (el.hasAttribute("data-ico") || el.hasAttribute("data-check"))) prep(el);
-        io2.observe(el);
-      });
+    document.querySelectorAll(ICON_SEL + ", [data-count]").forEach(function (el) {
+      if (el.closest(".reveal")) return;               // te obsłuży revealInner
+      if (!REDUCE && !el.hasAttribute("data-count")) prep(el);
+      io2.observe(el);
+    });
   }
 
   /* --- marker (scaleX in) --- */
@@ -179,7 +180,7 @@
         }
       });
       card.addEventListener("mouseenter", function () {
-        var svg = card.querySelector("[data-ico]");
+        var svg = card.querySelector("[data-ico], .ico svg");
         if (svg) { resetSvg(svg); draw(svg, 750); }
       });
       card.addEventListener("mouseleave", function () {
