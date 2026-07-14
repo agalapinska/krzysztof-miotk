@@ -5,6 +5,15 @@
    - Kolory: brand purple oklch(57.2% .21 280), brand-dark #15172c, itd.
    ========================================================================= */
 
+/* --- Nexa (nagłówki, self-host) — licencjonowany font marki --- */
+@font-face { font-family: "Nexa"; font-style: normal; font-weight: 300; font-display: swap; src: url("../assets/fonts/Nexa-Light.woff2") format("woff2"), url("../assets/fonts/Nexa-Light.woff") format("woff"); }
+@font-face { font-family: "Nexa"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/Nexa-Regular.woff2") format("woff2"), url("../assets/fonts/Nexa-Regular.woff") format("woff"); }
+@font-face { font-family: "Nexa"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/Nexa-Book.woff2") format("woff2"), url("../assets/fonts/Nexa-Book.woff") format("woff"); }
+@font-face { font-family: "Nexa"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/Nexa-Bold.woff2") format("woff2"), url("../assets/fonts/Nexa-Bold.woff") format("woff"); }
+@font-face { font-family: "Nexa"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/Nexa-Bold.woff2") format("woff2"), url("../assets/fonts/Nexa-Bold.woff") format("woff"); }
+@font-face { font-family: "Nexa"; font-style: normal; font-weight: 800; font-display: swap; src: url("../assets/fonts/Nexa-XBold.woff2") format("woff2"), url("../assets/fonts/Nexa-XBold.woff") format("woff"); }
+@font-face { font-family: "Nexa"; font-style: normal; font-weight: 900; font-display: swap; src: url("../assets/fonts/Nexa-Black.woff2") format("woff2"), url("../assets/fonts/Nexa-Black.woff") format("woff"); }
+
 :root {
   /* --- Marka (z quale.agency) --- */
   --brand:            oklch(57.2% 0.21 280);   /* fioletowy akcent QUALE */
@@ -28,7 +37,7 @@
   --white:            #ffffff;
 
   /* --- Typografia --- */
-  --font-display: "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  --font-display: "Nexa", "Hanken Grotesk", system-ui, sans-serif;
   --font-sans:    "Inter", system-ui, -apple-system, sans-serif;
   --font-mono:    "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
@@ -134,8 +143,8 @@ p  { color: var(--ink-soft); }
 /* ---------------------------------------------------------------- Buttons */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-weight: 600;
   font-size: .98rem;
   letter-spacing: -0.01em;
   padding: 0.9rem 1.5rem;
@@ -156,7 +165,7 @@ p  { color: var(--ink-soft); }
 .btn--block { width: 100%; }
 .link-arrow {
   display: inline-flex; align-items: center; gap: .4rem;
-  font-family: var(--font-display); font-weight: 700; color: var(--brand);
+  font-family: var(--font-sans); font-weight: 600; color: var(--brand);
 }
 .link-arrow svg { width: 16px; height: 16px; transition: transform .2s var(--ease); }
 .link-arrow:hover svg { transform: translateX(4px); }
@@ -202,7 +211,7 @@ p  { color: var(--ink-soft); }
 .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem 2.2rem; }
 .mega-grid a { display: block; padding-bottom: 1rem; border-bottom: 1px solid var(--line); transition: border-color .15s; }
 .mega-grid a:hover { border-color: var(--brand); }
-.mega-name { display: flex; align-items: center; gap: .45rem; font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; color: var(--ink); margin-bottom: .3rem; }
+.mega-name { display: flex; align-items: center; gap: .45rem; font-family: var(--font-sans); font-weight: 600; font-size: 1.02rem; color: var(--ink); margin-bottom: .3rem; }
 .mega-grid a:hover .mega-name { color: var(--brand); }
 .mega-name svg { width: 14px; height: 14px; color: var(--brand); opacity: 0; transform: translateX(-5px); transition: .18s var(--ease); }
 .mega-grid a:hover .mega-name svg { opacity: 1; transform: none; }
